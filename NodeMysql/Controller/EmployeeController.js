@@ -3,7 +3,7 @@ const connection = require("../Configuration/DbConnection")
 const router = express.Router()
 const {ROLES, STATUS} = require("../Configuration/Enums")
 const bcrypt = require("bcryptjs");
-const { pager } = require("../Configuration/Pager");
+const { pager } = require("../Configuration/Pager.js");
 
 
 // add employee
@@ -55,9 +55,10 @@ router.post('/',async (req,res) => {
 router.get('/',async(req,res) => {
     try{
         const result = await pager(
-            employee,
+            'employee',
             req.query.page,
             req.query.limit,
+            req.query.keyWord
           );
           res.json(result);
     }catch(err){
