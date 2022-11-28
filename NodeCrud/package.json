@@ -1,0 +1,31 @@
+{
+  "name": "nodecrud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "hemandh",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebirds": "^0.0.6",
+    "dotenv": "^16.0.3",
+    "email-templates": "^10.0.1",
+    "enum": "^3.0.4",
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.11.0",
+    "mongoose": "^6.7.2",
+    "multer": "^1.4.5-lts.1",
+    "node-schedule": "^2.1.0",
+    "nodemailer": "^6.8.0",
+    "nodemailer-express-handlebars": "^5.0.0",
+    "socket.io": "^4.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

@@ -1,0 +1,4 @@
+app.use(bodyParser.urlencoded({extended : false}))
+app.use(bodyParser.json)
+
+crud youtube : https://youtu.be/tMZ2UEQxidM

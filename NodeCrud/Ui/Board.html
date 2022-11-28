@@ -1,0 +1,21 @@
+
+<html>
+    <body>
+        <div class="mail">
+            <p class = "noticeText" id="noticeText"></p>
+        </div>
+        <style>
+            .noticeText{
+                font-size: 20px;
+                text-align: right;
+            }
+        </style>
+        <script src="/socket.io/socket.io.js/hmd"></script>
+        <script>
+            var socket = io();
+            socket.on('notification',(msg) => {
+                document.getElementById('noticeText').innerHTML = msg;
+            })
+        </script>
+    </body>
+</html>

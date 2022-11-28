@@ -1,0 +1,17 @@
+const connection = require("../Configuration/DbConnection")
+
+const pager = async (model, pageNo, count) => {
+  const page = parseInt(pageNo);
+  const limit = parseInt(count);
+  const startIndex = (page - 1) * limit;
+  const endIndex = page * limit;
+  const query = "SELECT * FROM ? limit ?, ?"
+
+  const getEmployee = await connection.query(query,[model,startIndex,endIndex])
+    console.log(query);
+  const result = {};
+  result.paginatedData = getEmployee;
+  return result;
+};
+
+module.exports = { pager };
