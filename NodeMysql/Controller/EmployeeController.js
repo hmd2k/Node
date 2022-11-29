@@ -5,7 +5,6 @@ const {ROLES, STATUS} = require("../Configuration/Enums")
 const bcrypt = require("bcryptjs");
 const { pager } = require("../Configuration/Pager.js");
 
-
 // add employee
 router.post('/',async (req,res) => {
     try{

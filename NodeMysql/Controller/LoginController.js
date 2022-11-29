@@ -36,9 +36,26 @@ router.post("/", async (req, res) => {
         process.env.TOKEN_KEY,
         {expiresIn: "2h"}
       )
-      res.json({
-        employeeData,accessToken,refreshToken
-      }).status(200)
+      // console.log("hi");
+      let data2= {"accessToken":accessToken,"refreshToken":refreshToken};
+      // console.log(data2);
+      let data1= employeeData;
+      // merge =data1+data2;
+      let LoginD= data1.concat(data2);
+      let d1=LoginD[0];
+      let d2 = LoginD[1];
+      let LoginDa=Object.assign(d1,d2)
+      console.log(LoginD);
+  
+      // console.log(data2);
+      // let LoginData=Object.assign(data2,data1);
+      // console.log(LoginData[0].merge([LoginData[1]]));
+
+      // console.log(data1);
+      // console.log(data3);
+      res.json(
+        LoginDa
+      ).status(200)
     }else{
       res.status(400).json('Invalid password')
     }
